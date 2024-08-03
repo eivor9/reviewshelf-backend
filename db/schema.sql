@@ -17,12 +17,12 @@ CREATE TABLE books (
 DROP TABLE IF EXISTS reviews;
 
 CREATE TABLE reviews (
- id SERIAL PRIMARY KEY,
- reviewer TEXT,
- content TEXT,
- highly_recommend BOOLEAN,
- rating INTEGER,
- CHECK (rating >= 1 AND rating <= 5),
- book_id INTEGER REFERENCES books (id)
- ON DELETE CASCADE
+  id SERIAL PRIMARY KEY,
+  rating INTEGER,
+  CHECK (rating >= 1 AND rating <= 5),
+  book_id INTEGER REFERENCES books (id)
+  ON DELETE CASCADE,
+  reviewer TEXT,
+  highly_recommend BOOLEAN,
+  content TEXT
 );

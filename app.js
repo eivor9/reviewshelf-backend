@@ -15,8 +15,19 @@ app.use(morgan("tiny"));
 app.get("/", (req, res) => {
   res.json({
     message: "WELCOME TO REVIEW SHELF",
-    endpoints: {
-      getAllBooks: '/books'
+    books: {
+      getAllBooks: '/books',
+      createOneBook: '/books',
+      getOneBook: '/books/:id',
+      editOneBook: '/books/:id',
+      deleteOneBook: '/books/:id'
+    },
+    reviews: {
+      getAllReviews: '/books/:id/reviews',
+      createOneReview: '/books/:id/reviews',
+      getOneReview: '/books/:id/reviews/:reviewer',
+      editOneBook: '/books/:id/reviews/:reviewer',
+      deleteOneBook: '/books/:id/reviews/:reviewer'
     }
   });
 });
@@ -25,6 +36,7 @@ const booksController = require("./controllers/booksController.js");
 app.use("/books", booksController);
 
 const reviewsController = require("./controllers/reviewsController.js");
+const { getAllReviews } = require("./queries/reviews.js");
 app.use("/reviews", reviewsController);
 
 // 404 PAGE
