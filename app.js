@@ -36,7 +36,6 @@ const booksController = require("./controllers/booksController.js");
 app.use("/books", booksController);
 
 const reviewsController = require("./controllers/reviewsController.js");
-const { getAllReviews } = require("./queries/reviews.js");
 app.use("/reviews", reviewsController);
 
 // 404 PAGE

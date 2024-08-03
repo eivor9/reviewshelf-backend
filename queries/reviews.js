@@ -2,6 +2,10 @@ const db = require("../db/dbConfig.js");
 
 const getAllReviews = async (book_id) => {
   try {
+    if (!book_id){
+      const allReviews = await db.any("SELECT * FROM reviews");
+      return allReviews;
+    }
     const allReviews = await db.any("SELECT * FROM reviews WHERE book_id=$1", book_id);
     return allReviews;
   } catch (err) {
