@@ -17,8 +17,11 @@ reviews.get("/", async (req, res) => {
   const { book_id } = req.params;
   const reviews = await getAllReviews(book_id);
   const book = await getBook(book_id);
-  if (reviews.length) {
+  if (reviews.length && book.id) {
     res.status(200).json({...book, reviews});
+  } 
+  else if (reviews.length) {
+    res.status(200).json(reviews);
   } else {
     res.status(500).json({error: "Book not found or server error"});
   }
