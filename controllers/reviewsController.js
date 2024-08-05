@@ -23,7 +23,7 @@ reviews.get("/", async (req, res) => {
   else if (reviews.length) {
     res.status(200).json(reviews);
   } else {
-    res.status(500).json({error: "Book not found or server error"});
+    res.status(500).json({error: "Book not found or server error", reviews: []});
   }
 });
 
