@@ -1,8 +1,8 @@
 -- db/schema.sql
-DROP DATABASE IF EXISTS books_dev;
-CREATE DATABASE books_dev;
+DROP DATABASE IF EXISTS books_dev_3cnl;
+CREATE DATABASE books_dev_3cnl;
 
-\c books_dev;
+\c books_dev_3cnl;
 
 CREATE TABLE books (
  id SERIAL PRIMARY KEY,

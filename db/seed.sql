@@ -1,5 +1,5 @@
 -- db/seed.sql
-\c books_dev;
+\c books_dev_3cnl;
 
 INSERT INTO books (title, author, page_num, cover_img, category, description) VALUES
 ('THE HOUSEMAID', 'FREIDA MCFADDEN', 338, 'https://m.media-amazon.com/images/I/81AHTyq2wVL._AC_UF1000,1000_QL80_.jpg', 'THRILLER', 'An absolutely addictive psychological thriller with a jaw-dropping twist'),
